@@ -1,6 +1,6 @@
 # Overloading
 
-Overladed Argument Checker for Go
+Overloaded Argument Checker for Go
 
 ## Usage
 
