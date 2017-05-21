@@ -53,6 +53,45 @@ func add(args ...interface{}) interface{} {
 }
 ```
 
+This ``add`` function has optional argument:
+
+```
+package main
+
+import (
+	ov "github.com/cwchentw/overloading-golang"
+	"log"
+)
+
+var checker *ov.Checker
+
+func init() {
+	// Expect (int, int) or (float64, float64)
+	checker = ov.NewChecker(
+		ov.NewRule(
+			ov.NewArgument("int"),
+			ov.NewArgument("int", 3)))
+}
+
+func main() {
+	n := add(3)
+
+	if n != 6 {
+		log.Fatal("Wrong number")
+	}
+}
+
+func add(args ...interface{}) int {
+	out := checker.Check(args)
+
+	a := out[0].(int)
+	b := out[1].(int)
+
+	return a + b
+}
+
+```
+
 ## Intro
 
 Currently, Go lacks function (or method) overloading. One possible solution may be varargs:
