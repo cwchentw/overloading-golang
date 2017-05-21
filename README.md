@@ -66,7 +66,7 @@ import (
 var checker *ov.Checker
 
 func init() {
-	// Expect (int, int) or (float64, float64)
+	// Expect (int, int) or (int)
 	checker = ov.NewChecker(
 		ov.NewRule(
 			ov.NewArgument("int"),
