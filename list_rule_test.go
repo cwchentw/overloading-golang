@@ -4,7 +4,7 @@ import "testing"
 
 func TestRule(t *testing.T) {
 	// Expect (int, int)
-	r := NewRule(
+	r := NewListRule(
 		NewArgument("int"),
 		NewArgument("int"))
 
@@ -26,7 +26,7 @@ func TestRule(t *testing.T) {
 
 func TestOptionalRule(t *testing.T) {
 	// Expect (int, int) or (int)
-	r := NewRule(
+	r := NewListRule(
 		NewArgument("int"),
 		NewArgument("int", 3))
 
@@ -48,7 +48,7 @@ func TestOptionalRule(t *testing.T) {
 
 func TestRuleViolation(t *testing.T) {
 	// Expect (int, int)
-	r := NewRule(
+	r := NewListRule(
 		NewArgument("int"),
 		NewArgument("int"))
 

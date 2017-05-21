@@ -1,12 +1,12 @@
 package overloading
 
 type ListChecker struct {
-	rules []*Rule
+	rules []*ListRule
 }
 
-func NewListChecker(rules ...*Rule) *ListChecker {
+func NewListChecker(rules ...*ListRule) *ListChecker {
 	c := new(ListChecker)
-	c.rules = make([]*Rule, len(rules))
+	c.rules = make([]*ListRule, len(rules))
 
 	for i, r := range rules {
 		c.rules[i] = r

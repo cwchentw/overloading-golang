@@ -5,13 +5,13 @@ import (
 	"reflect"
 )
 
-type Rule struct {
+type ListRule struct {
 	args []*Argument
 	op   int
 }
 
-func NewRule(args ...*Argument) *Rule {
-	r := new(Rule)
+func NewListRule(args ...*Argument) *ListRule {
+	r := new(ListRule)
 	r.args = make([]*Argument, len(args))
 
 	for i, a := range args {
@@ -24,7 +24,7 @@ func NewRule(args ...*Argument) *Rule {
 	return r
 }
 
-func (r *Rule) Check(args []interface{}) ([]interface{}, error) {
+func (r *ListRule) Check(args []interface{}) ([]interface{}, error) {
 	_len := len(r.args)
 	out := make([]interface{}, _len)
 

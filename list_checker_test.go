@@ -10,7 +10,7 @@ func TestChecker(t *testing.T) {
 
 	// Expect (int, int)
 	c := NewListChecker(
-		NewRule(
+		NewListRule(
 			NewArgument("int"),
 			NewArgument("int")))
 
@@ -38,7 +38,7 @@ func TestCheckerViolation(t *testing.T) {
 
 	// Expect (int, int)
 	c := NewListChecker(
-		NewRule(
+		NewListRule(
 			NewArgument("int"),
 			NewArgument("int")))
 
@@ -59,10 +59,10 @@ func TestMultiRuleChecker(t *testing.T) {
 
 	// Expect (int, int) or (float64, float64)
 	c := NewListChecker(
-		NewRule(
+		NewListRule(
 			NewArgument("int"),
 			NewArgument("int")),
-		NewRule(
+		NewListRule(
 			NewArgument("float64"),
 			NewArgument("float64")))
 
