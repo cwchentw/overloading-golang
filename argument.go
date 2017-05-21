@@ -1,8 +1,9 @@
 package overloading
 
 type Argument struct {
-	_type    string
-	_default interface{}
+	_type      string
+	isOptional bool
+	_default   interface{}
 }
 
 func NewArgument(args ...interface{}) *Argument {
@@ -23,6 +24,7 @@ func NewArgument(args ...interface{}) *Argument {
 	p._type = arr[0].(string)
 
 	if len(arr) == 2 {
+		p.isOptional = true
 		p._default = arr[1]
 	}
 
@@ -34,7 +36,7 @@ func (a *Argument) Type() string {
 }
 
 func (a *Argument) IsOptional() bool {
-	return a._default != nil
+	return a.isOptional
 }
 
 func (a *Argument) Default() interface{} {

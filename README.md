@@ -14,11 +14,11 @@ import (
 	"log"
 )
 
-var checker *ov.Checker
+var checker *ov.ListChecker
 
 func init() {
 	// Expect (int, int) or (float64, float64)
-	checker = ov.NewChecker(
+	checker = ov.NewListChecker(
 		ov.NewRule(
 			ov.NewArgument("int"),
 			ov.NewArgument("int")),
@@ -63,11 +63,11 @@ import (
 	"log"
 )
 
-var checker *ov.Checker
+var checker *ov.ListChecker
 
 func init() {
 	// Expect (int, int) or (int)
-	checker = ov.NewChecker(
+	checker = ov.NewListChecker(
 		ov.NewRule(
 			ov.NewArgument("int"),
 			ov.NewArgument("int", 3)))

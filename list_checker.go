@@ -1,11 +1,11 @@
 package overloading
 
-type Checker struct {
+type ListChecker struct {
 	rules []*Rule
 }
 
-func NewChecker(rules ...*Rule) *Checker {
-	c := new(Checker)
+func NewListChecker(rules ...*Rule) *ListChecker {
+	c := new(ListChecker)
 	c.rules = make([]*Rule, len(rules))
 
 	for i, r := range rules {
@@ -15,7 +15,7 @@ func NewChecker(rules ...*Rule) *Checker {
 	return c
 }
 
-func (c *Checker) Check(args []interface{}) []interface{} {
+func (c *ListChecker) Check(args []interface{}) []interface{} {
 	for _, r := range c.rules {
 		out, err := r.Check(args)
 		if err == nil {

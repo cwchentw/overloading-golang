@@ -9,7 +9,7 @@ func TestChecker(t *testing.T) {
 	t.Parallel()
 
 	// Expect (int, int)
-	c := NewChecker(
+	c := NewListChecker(
 		NewRule(
 			NewArgument("int"),
 			NewArgument("int")))
@@ -37,7 +37,7 @@ func TestCheckerViolation(t *testing.T) {
 	}()
 
 	// Expect (int, int)
-	c := NewChecker(
+	c := NewListChecker(
 		NewRule(
 			NewArgument("int"),
 			NewArgument("int")))
@@ -58,7 +58,7 @@ func TestMultiRuleChecker(t *testing.T) {
 	t.Parallel()
 
 	// Expect (int, int) or (float64, float64)
-	c := NewChecker(
+	c := NewListChecker(
 		NewRule(
 			NewArgument("int"),
 			NewArgument("int")),
