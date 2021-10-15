@@ -1,4 +1,4 @@
-# Overloading
+# Function Overloading in Golang
 
 Overloaded Argument Checker for Go
 
@@ -122,7 +122,7 @@ func add(args ...interface{}) int {
 
 Use map as argument:
 
-```
+```golang
 package main
 
 import (
