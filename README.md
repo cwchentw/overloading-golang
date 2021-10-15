@@ -6,7 +6,7 @@ Overloaded Argument Checker for Go
 
 Currently, Go lacks function (or method) overloading. One possible solution may be varargs:
 
-```
+```golang
 func Foo(args ...interface{}) interface{} {
     // Process args
     
@@ -16,11 +16,11 @@ func Foo(args ...interface{}) interface{} {
 
 However, function arguments in this pattern loses the benefit from type checking since these functions use arrays for anything. Argument checking becomes tedious routines in these functions. In our package, we built an argument checker, reducing these chores.
 
-Using varargs for function overloading is still debatable. Don't abuse it.
+It is still debatable to use varargs for function overloading. Don't abuse it.
 
 Another solution may use map as argument:
 
-```
+```golang
 func Bar(arg map[string]interface{}) interface{} {
 	// Process arg
 	
@@ -34,7 +34,7 @@ Similiarly, our package implements a map argument checker.
 
 This ``add`` function responds to two different data types:
 
-```
+```golang
 package main
 
 import (
@@ -83,7 +83,7 @@ func add(args ...interface{}) interface{} {
 
 This ``add`` function has optional argument:
 
-```
+```golang
 package main
 
 import (
@@ -174,8 +174,4 @@ func add(arg map[string]interface{}) interface{} {
 
 ## Copyright
 
-2017, Michael Chen
-
-## License
-
-MIT
+Copyright (c) 2017, Michelle Chen. Licensed under MIT.
